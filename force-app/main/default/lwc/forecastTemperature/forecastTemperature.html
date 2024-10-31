@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Tomorrow's Weather" icon-name="utility:world">
+        <lightning-layout>
+            <!-- Afișează datele despre vreme dacă sunt disponibile -->
+            <template if:true={maxTemperatureData} || true={minTemperatureData}>
+                <lightning-layout-item class="slds-size_1-of-2">
+                    <div class="temperature-card">
+                        <p class="temperature-title">Maximum Temperature:</p>
+                        <p class="temperature-value">{maxTemperatureData} °C</p>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item class="slds-size_1-of-2">
+                    <div class="temperature-card">
+                        <p class="temperature-title">Minimum Temperature:</p>
+                        <p class="temperature-value">{minTemperatureData} °C</p>
+                    </div>
+                </lightning-layout-item>
+            </template>
+
+            <!-- Afișează un mesaj de eroare dacă există o eroare -->
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>
+
+
+
+
+
+  
